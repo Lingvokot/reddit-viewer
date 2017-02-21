@@ -20,35 +20,30 @@ export default class App extends Component {
 		};
 	}
 	componentDidMount() {
-		console.log("componentDidMount");
-		this.loadMorePosts();
+		if (this.state.postsToList.length == 0)
+			this.loadMorePosts();
 	}
 	loadMorePosts() {
-		console.log("bullshit");
-		console.log(this.setState);
 		this.setState({finished: false}, async () => {
-			console.log("async");
 			let page = null;
 			try {
 				if (this.state.postsToList.length == 0)
-					page = await PostsFromSubreddit.fetch(APIOptions, 'all');
+					page = await PostsFromSubreddit.fetch(APIOptions, 'all', {limit: 10});
 				else {
 					const after = last(this.state.postsToList).uuid;
-					page = await PostsFromSubreddit.fetch(APIOptions, 'all', {after});
+					page = await PostsFromSubreddit.fetch(APIOptions, 'all', {after, limit: 10});
 				}
 			}
 			catch (e) {
-				console.log(e.message);
 				this.setState({error: e.message, finished: true});
 				return;
 			}
-			console.log("loaded successfully");
 			let newPosts = Object.values(page.apiResponse.posts);
 			this.setState({
 				error: null, finished: true,
 				postsToList: this.state.postsToList.concat(newPosts),
 				pagesFetched: this.state.pagesFetched + 1
-			});
+			}, () => {console.log(`Now we have ${this.state.postsToList.length} posts`);});
 		});
 	}
 	render() {
@@ -61,17 +56,15 @@ export default class App extends Component {
 		return (
 			<Navigator initialRoute={{ title: 'Posts', index: 0 }}
 				renderScene={(route, navigator) => {
-				console.log("Selected post: " + JSON.stringify(this.state.selectedPost));
 				const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 				if (route.index == 0)
 					return (
 						<PostsList toList={ds.cloneWithRows(this.state.postsToList)}
 							onForward={(selectedPost) => {
-								console.log("Mudostate: " + JSON.stringify(this.state));
 								navigator.push({title: selectedPost.title, index: route.index + 1});
 								this.setState({selectedPost});
 							}}
-							onEndReached={this.loadMorePosts}/>
+							onEndReached={() => this.loadMorePosts()}/>
 					)
 				else
 					return (

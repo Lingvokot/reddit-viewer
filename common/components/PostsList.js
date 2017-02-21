@@ -5,6 +5,10 @@ export default class PostsList extends Component {
 	render() {
 		return (
 			<ListView dataSource={this.props.toList}
+				onEndReached={() => {
+					console.log("end reached");
+					this.props.onEndReached();
+				}}
 				renderRow={(rowData) => (
 					<TouchableHighlight style={{
 							borderWidth: 1,
@@ -13,16 +17,10 @@ export default class PostsList extends Component {
 							margin: 5,
 							padding: 5
 						}}
-						onPress={() => {this.props.onForward(rowData);}}
-						onEndReached={() => {console.log("End reached");}}>
+						onPress={() => {this.props.onForward(rowData);}}>
 						<Text>{rowData.title}</Text>
 					</TouchableHighlight>
 				)}/>
 		);
 	}
 }
-
-/*
-
-				onEndReached={this.props.onEndReached}
-*/
