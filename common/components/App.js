@@ -43,7 +43,7 @@ export default class App extends Component {
 				error: null, finished: true,
 				postsToList: this.state.postsToList.concat(newPosts),
 				pagesFetched: this.state.pagesFetched + 1
-			}, () => {console.log(`Now we have ${this.state.postsToList.length} posts`);});
+			});
 		});
 	}
 	render() {

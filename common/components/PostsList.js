@@ -10,7 +10,6 @@ export default class PostsList extends Component {
 		return (
 			<ListView dataSource={this.props.toList}
 				onEndReached={() => {
-					console.log("end reached");
 					this.props.onEndReached();
 				}}
 				renderRow={(rowData) => (
