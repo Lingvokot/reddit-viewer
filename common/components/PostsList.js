@@ -3,6 +3,10 @@ import { View, Text, TouchableHighlight, ListView } from 'react-native';
 
 export default class PostsList extends Component {
 	render() {
+		if (this.props.toList.getRowCount() == 0)
+			return (
+				<Text>Loading posts, please wait...</Text>
+			)
 		return (
 			<ListView dataSource={this.props.toList}
 				onEndReached={() => {
