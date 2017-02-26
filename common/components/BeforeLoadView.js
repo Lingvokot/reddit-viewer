@@ -19,5 +19,7 @@ export default class BeforeLoadView extends Component {
 							}}/>
 				</View>
 			);
+		else
+			return null;
 	}
 }

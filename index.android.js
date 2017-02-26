@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import App from './common/components/App';
 
-class redditViewer extends Component {
+export default class redditViewer extends Component {
 	render() {
 		return (<App/>);
 	}

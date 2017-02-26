@@ -3,11 +3,9 @@ import { Navigator, ListView } from 'react-native';
 import PostsList from './PostsList';
 import PostView from './PostView';
 import BeforeLoadView from './BeforeLoadView';
-import APIOptions from '@r/api-client';
-import { collections } from '@r/api-client';
 import { last } from 'lodash/array';
 import { each } from 'lodash/collection';
-const { PostsFromSubreddit } = collections;
+import loadPosts from './loadPosts';
 
 const cardsInPage = 10;
 
@@ -28,10 +26,10 @@ export default class App extends Component {
 			let page = null;
 			try {
 				if (this.state.postsToList.length == 0)
-					page = await PostsFromSubreddit.fetch(APIOptions, 'all', {limit: 10});
+					page = await loadPosts({limit: 10});
 				else {
 					const after = last(this.state.postsToList).uuid;
-					page = await PostsFromSubreddit.fetch(APIOptions, 'all', {after, limit: 10});
+					page = await loadPosts({after, limit: 10});
 				}
 			}
 			catch (e) {
@@ -47,7 +45,7 @@ export default class App extends Component {
 		});
 	}
 	render() {
-		if (this.state.error)
+		if (this.state.error || (!this.state.finished && this.state.postsToList.length == 0))
 			return (
 				<BeforeLoadView error={this.state.error}
 					finished={this.state.finished}
