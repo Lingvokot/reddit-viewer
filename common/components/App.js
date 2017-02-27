@@ -62,7 +62,8 @@ export default class App extends Component {
 								navigator.push({title: selectedPost.title, index: route.index + 1});
 								this.setState({selectedPost});
 							}}
-							onEndReached={() => this.loadMorePosts()}/>
+							onEndReached={() => this.loadMorePosts()}
+							ref={(ref) => {this.postsList = ref;}}/>
 					)
 				else
 					return (

@@ -1,16 +1,18 @@
 import 'react-native';
-import {ListView} from 'react-native';
+import {ListView, Linking} from 'react-native';
 import React from 'react';
 import Index from '../index.android.js';
-//import loadPosts from '../__mocks__/common/components/loadPosts';
+//import {configureMock, getReturnedValue} from '../__mocks__/common/components/openURL';
+import App from '../common/components/App';
 import BeforeLoadView from '../common/components/BeforeLoadView';
 import PostView from '../common/components/PostView';
 import PostsList from '../common/components/PostsList';
 import FakeHref from '../common/components/FakeHref';
+const {configureMock} = Linking;
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-jest.mock('../common/components/loadPosts');
+//jest.mock('../common/components/loadPosts');
 jest.useFakeTimers();
 
 const answer1 = {
@@ -202,9 +204,9 @@ it('Testing first rendering', () => {
 });*/
 
 describe('Testing BeforeLoadView', () => {
-	let dummyMockFunc = jest.fn();
-	dummyMockFunc.mockImplementation(() => {console.log('"Retry to load" button pressed');});
-	let getTestingFunction = (finished, error, retryFunc) => {
+	const dummyMockFunc = jest.fn();
+	dummyMockFunc.mockImplementation(() => {});
+	const getTestingFunction = (finished, error, retryFunc) => {
 		return () => {
 			const domTree = renderer.create(
 				<BeforeLoadView finished={finished} error={error} retryFunc={retryFunc}/>
@@ -213,6 +215,7 @@ describe('Testing BeforeLoadView', () => {
 			expect(tree).toMatchSnapshot();
 		};
 	}
+
 	test('Rendering case: loading has not finished yet, no error messages occurred before',
 		getTestingFunction(false, null, dummyMockFunc));
 	test('Rendering case: loading has not finished yet but there was an error before',
@@ -233,8 +236,9 @@ describe('Testing BeforeLoadView', () => {
 });
 
 describe('Testing PostView', () => {
-	let onBackMockFunc = jest.fn();
-	onBackMockFunc.mockImplementation(() => {console.log("Back button pressed");});
+	const onBackMockFunc = jest.fn();
+	onBackMockFunc.mockImplementation(() => {});
+
 	test('General rendering', () => {
 		const domTree = renderer.create(
 			<PostView selectedPost={answer1.posts[keys[0]]}
@@ -256,11 +260,14 @@ describe('Testing PostView', () => {
 });
 
 describe('Testing PostsList', () => {
-	let mockOnForward = jest.fn();
-	mockOnForward.mockImplementation((row) => {console.log(row);});
-	let mockOnEndReached = jest.fn();
-	mockOnEndReached.mockImplementation(() => {console.log("End reached");});
+	let returnedValue = null;
+	const content = Object.values(answer2.posts);
+	const mockOnForward = jest.fn();
+	mockOnForward.mockImplementation((row) => {returnedValue = row});
+	const mockOnEndReached = jest.fn();
+	mockOnEndReached.mockImplementation(() => {});
 	const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+
 	test('Rendering case: there are no posts yet', () => {
 		const domTree = renderer.create(
 			<PostsList toList={ds.cloneWithRows([])}
@@ -271,38 +278,116 @@ describe('Testing PostsList', () => {
 	});
 	test('Rendering case: there are some posts', () => {
 		const domTree = renderer.create(
-			<PostsList toList={ds.cloneWithRows(Object.values(answer2.posts))}
+			<PostsList toList={ds.cloneWithRows(content)}
 				onForward={mockOnForward} onEndReached={mockOnEndReached}/>
 		);
 		const tree = domTree.toJSON();
 		expect(tree).toMatchSnapshot();
 	});
-	/*test('checking touchability of post headers', () => {
-
-	});*/
+	test('Checking reaction on onEndReached event', () => {
+		const domTree = renderer.create(
+			<PostsList toList={ds.cloneWithRows(content)}
+				onForward={mockOnForward} onEndReached={mockOnEndReached}/>
+		);
+		const listView = domTree.getInstance().listView;
+		expect(typeof listView.props.onEndReached).toEqual('function');
+		listView.props.onEndReached();
+		expect(mockOnEndReached).toBeCalled();
+	});
+	test('Checking touchability of post headers', () => {
+		const domTree = renderer.create(
+			<PostsList toList={ds.cloneWithRows(content)}
+				onForward={mockOnForward} onEndReached={mockOnEndReached}/>
+		);
+		const listElements = domTree.getInstance().listElements;
+		const expectedLength = Object.keys(answer2.posts).length;
+		expect(listElements.length).toEqual(expectedLength);
+		for (let i = 0; i < expectedLength; i++) {
+			const element1 = listElements[i];
+			expect(typeof element1.props.onPress).toEqual('function');
+			element1.props.onPress();
+			expect(mockOnForward.mock.calls.length).toEqual(i + 1);
+			expect(JSON.stringify(returnedValue)).toEqual(JSON.stringify(content[i]));
+		}
+	});
 });
 
 describe('Testing FakeHref', () => {
-	let mockOnCannotHandle = jest.fn();
-	mockOnCannotHandle.mockImplementation(() => {console.log("Cannot handle");});
-	let mockOnError = jest.fn();
-	mockOnError.mockImplementation((error) => {console.log(error);});
-	test('General rendering', () => {
-		const domTree = renderer.create(
-			<FakeHref url={answer1.posts[keys[0]].cleanUrl}
+	let mockOnCannotHandle = null, mockOnError = null, domTree = null, highlight = null;
+	let visitedURL = null;
+	let addedListener = null;
+	const cleanUrl = answer1.posts[keys[0]].cleanUrl;
+	const listenerForVisiting = (event) => {
+		expect(event.url).toEqual(cleanUrl);
+		expect(mockOnError).not.toBeCalled();
+		expect(mockOnCannotHandle).not.toBeCalled();
+		Linking.removeEventListener(listenerForVisiting);
+	};
+
+	beforeEach(() => {
+		visitedURL = null;
+		mockOnCannotHandle = jest.fn();
+		mockOnCannotHandle.mockImplementation(() => {});
+		mockOnError = jest.fn();
+		mockOnError.mockImplementation((error) => {});
+		domTree = renderer.create(
+			<FakeHref url={cleanUrl}
 				onCannotHandle={mockOnCannotHandle}
 				errorHandler={mockOnError}/>
 		);
-		console.log(domTree.getInstance().highlight.props);
+		highlight = domTree.getInstance().highlight;
+	});
+
+	test('General rendering', () => {
 		const tree = domTree.toJSON();
 		expect(tree).toMatchSnapshot();
+		expect(typeof highlight.props.onPress).toEqual('function');
 	});
-	//test('Handler of touch event of this component', () => {
-	//
-	//});
+	test('Touch handling: some internal error occurred and URL cannot be handled', () => {
+		configureMock(false, true);
+		addedListener = (event) => {
+			expect(typeof event.error).toEqual('object');
+			expect(mockOnError).toBeCalled();
+			expect(mockOnCannotHandle).not.toBeCalled();
+			Linking.removeEventListener(addedListener);
+		}
+		Linking.addEventListener('url', addedListener);
+		highlight.props.onPress();
+	});
+	test('Touch handling: some internal error occurred but URL can be handled', () => {
+		configureMock(true, true);
+		addedListener = (event) => {
+			expect(typeof event.error).toEqual('object');
+			expect(mockOnError).toBeCalled();
+			expect(mockOnCannotHandle).not.toBeCalled();
+			Linking.removeEventListener(addedListener);
+		}
+		Linking.addEventListener('url', addedListener);
+		highlight.props.onPress();
+	});
+	test('Touch handling: cannot handle URL', () => {
+		configureMock(false, false);
+		highlight.props.onPress();
+		expect(mockOnError).not.toBeCalled();
+		//expect(mockOnCannotHandle).toBeCalled();
+		expect(visitedURL).toBeNull();
+	});
+	test('Touch handling: all must be OK', () => {
+		configureMock(true, false);
+		Linking.addEventListener('url', listenerForVisiting);
+		highlight.props.onPress();
+	});
 });
 
-/*
 it('testing main logic on App component', () => {
-
-});*/
+	const domTree = renderer.create(
+		<App/>
+	);
+	const instance = domTree.getInstance();
+	await instance.loadMorePosts();
+	instance.render();
+	console.log(instance);
+	const postsListElement = instance.postsList;
+	console.log(postsListElement.props.toList);
+	console.log(instance);
+});

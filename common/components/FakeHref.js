@@ -11,7 +11,7 @@ export default class FakeHref extends Component {
 							this.props.onCannotHandle();
 						else
 							return Linking.openURL(this.props.url);
-					}).catch(this.props.errorHandler);
+					}).catch((error) => this.props.errorHandler(error));
 				}} ref={(ref) => {this.highlight = ref;}}>
 				<Text style={{color: "blue", textDecorationLine: "underline"}}>
 					{this.props.url}
