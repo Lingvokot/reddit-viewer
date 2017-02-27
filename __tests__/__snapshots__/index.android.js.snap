@@ -1,4 +1,4 @@
-exports[`test first rendering is correct 1`] = `
+exports[`Testing BeforeLoadView Rendering case: loading has not finished yet but there was an error before 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -7,7 +7,7 @@ exports[`test first rendering is correct 1`] = `
 </Text>
 `;
 
-exports[`testing BeforeLoadView Loading has not finished yet but there was an error before 1`] = `
+exports[`Testing BeforeLoadView Rendering case: loading has not finished yet, no error messages occurred before 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -16,18 +16,9 @@ exports[`testing BeforeLoadView Loading has not finished yet but there was an er
 </Text>
 `;
 
-exports[`testing BeforeLoadView Loading has not finished yet, no error messages occurred before 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail">
-  Loading posts, please wait...
-</Text>
-`;
+exports[`Testing BeforeLoadView Rendering case: loading is finished successfully 1`] = `null`;
 
-exports[`testing BeforeLoadView Loading is finished successfully 1`] = `null`;
-
-exports[`testing BeforeLoadView Loading is finished with an error 1`] = `
+exports[`Testing BeforeLoadView Rendering case: loading is finished with an error 1`] = `
 <View>
   <Text
     accessible={true}
@@ -87,7 +78,7 @@ exports[`testing BeforeLoadView Loading is finished with an error 1`] = `
 </View>
 `;
 
-exports[`testing FakeHref testing general rendering 1`] = `
+exports[`Testing FakeHref General rendering 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -128,7 +119,7 @@ exports[`testing FakeHref testing general rendering 1`] = `
 </View>
 `;
 
-exports[`testing PostView testing general rendering 1`] = `
+exports[`Testing PostView General rendering 1`] = `
 <View>
   <View
     accessibilityComponentType="button"
@@ -256,7 +247,7 @@ exports[`testing PostView testing general rendering 1`] = `
 </View>
 `;
 
-exports[`testing PostsList testing rendering when there are no posts yet 1`] = `
+exports[`Testing PostsList Rendering case: there are no posts yet 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}
@@ -265,7 +256,7 @@ exports[`testing PostsList testing rendering when there are no posts yet 1`] = `
 </Text>
 `;
 
-exports[`testing PostsList testing rendering when there are some posts 1`] = `
+exports[`Testing PostsList Rendering case: there are some posts 1`] = `
 <View>
   <RCTScrollView>
     <View>
@@ -652,4 +643,13 @@ exports[`testing PostsList testing rendering when there are some posts 1`] = `
     </View>
   </RCTScrollView>
 </View>
+`;
+
+exports[`test Testing first rendering 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail">
+  Loading posts, please wait...
+</Text>
 `;

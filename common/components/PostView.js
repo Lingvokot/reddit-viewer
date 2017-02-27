@@ -16,7 +16,7 @@ export default class PostView extends Component {
 						style={{
                             paddingTop: 5, paddingBottom: 5,
                             backgroundColor: "blue"
-                        }}/>
+                        }} ref={(ref) => {this.backButton = ref;}}/>
 				<Text style={{fontWeight: "bold", textAlign: "center"}}>
 					{selectedPost.title}
 				</Text>
@@ -30,7 +30,7 @@ export default class PostView extends Component {
 					}}
 					errorHandler={(err) => {
 						alert(err.message);
-					}}/>
+					}} ref={(ref) => {this.externalLink = ref;}}/>
 			</View>
 		)
 	}

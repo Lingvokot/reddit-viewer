@@ -2,7 +2,7 @@ import 'react-native';
 import {ListView} from 'react-native';
 import React from 'react';
 import Index from '../index.android.js';
-import loadPosts from '../__mocks__/common/components/loadPosts';
+//import loadPosts from '../__mocks__/common/components/loadPosts';
 import BeforeLoadView from '../common/components/BeforeLoadView';
 import PostView from '../common/components/PostView';
 import PostsList from '../common/components/PostsList';
@@ -184,16 +184,24 @@ for (let i = 0; i < 10; i++)
 for (let i = 10; i < 15; i++)
 	answer3.posts[keys[i]] = answer1.posts[keys[i]];
 
-it('first rendering is correct', () => {
+it('Testing first rendering', () => {
 	const domTree = renderer.create(
 		<Index/>
 	);
-	console.log(JSON.stringify(domTree));
 	const tree = domTree.toJSON();
 	expect(tree).toMatchSnapshot();
 });
 
-describe('testing BeforeLoadView', () => {
+/*it('Testing work of mock', async () => {
+	let defaultLoad = await loadPosts();
+	let withLimit = await loadPosts({limit: 10});
+	let withOffset = await loadPosts({limit: 5, after: keys[9]});
+	expect(JSON.stringify(defaultLoad)).toEqual(JSON.stringify(answer1));
+	expect(JSON.stringify(withLimit)).toEqual(JSON.stringify(answer2));
+	expect(JSON.stringify(withOffset)).toEqual(JSON.stringify(answer3));
+});*/
+
+describe('Testing BeforeLoadView', () => {
 	let dummyMockFunc = jest.fn();
 	dummyMockFunc.mockImplementation(() => {console.log('"Retry to load" button pressed');});
 	let getTestingFunction = (finished, error, retryFunc) => {
@@ -203,45 +211,57 @@ describe('testing BeforeLoadView', () => {
 			)
 			const tree = domTree.toJSON();
 			expect(tree).toMatchSnapshot();
-			
 		};
 	}
-	test('Loading has not finished yet, no error messages occurred before',
+	test('Rendering case: loading has not finished yet, no error messages occurred before',
 		getTestingFunction(false, null, dummyMockFunc));
-	test('Loading has not finished yet but there was an error before',
+	test('Rendering case: loading has not finished yet but there was an error before',
 		getTestingFunction(false, 'Some error occurred', dummyMockFunc));
-	test('Loading is finished successfully',
+	test('Rendering case: loading is finished successfully',
 		getTestingFunction(true, null, dummyMockFunc));
-	test('Loading is finished with an error', 
+	test('Rendering case: loading is finished with an error', 
 		getTestingFunction(true, 'Some error occurred', dummyMockFunc));
-	/*test('Checking touchability of "Retry to load" button', () => {
-	
-	});*/
+	test('Checking touchability of "Retry to load" button', () => {
+		const domTree = renderer.create(
+			<BeforeLoadView finished={true} error={'Some error occurred'} retryFunc={dummyMockFunc}/>
+		);
+		const retryButton = domTree.getInstance().retryButton;
+		expect(typeof retryButton.props.onPress).toEqual('function');
+		retryButton.props.onPress();
+		expect(dummyMockFunc).toBeCalled();
+	});
 });
 
-describe('testing PostView', () => {
-	let dummyMockFunc = jest.fn();
-	dummyMockFunc.mockImplementation(() => {console.log("Back button pressed");});
-	test('testing general rendering', () => {
+describe('Testing PostView', () => {
+	let onBackMockFunc = jest.fn();
+	onBackMockFunc.mockImplementation(() => {console.log("Back button pressed");});
+	test('General rendering', () => {
 		const domTree = renderer.create(
 			<PostView selectedPost={answer1.posts[keys[0]]}
-						onBack={dummyMockFunc}/>
+						onBack={onBackMockFunc}/>
 		);
 		const tree = domTree.toJSON();
 		expect(tree).toMatchSnapshot();
 	});
-	/*test('Checking touchability of link', () => {
-
-	})*/
+	test('Checking touchability of "Back" button', () => {
+		const domTree = renderer.create(
+			<PostView selectedPost={answer1.posts[keys[0]]}
+						onBack={onBackMockFunc}/>
+		);
+		const backButton = domTree.getInstance().backButton;
+		expect(typeof backButton.props.onPress).toEqual('function');
+		backButton.props.onPress();
+		expect(onBackMockFunc).toBeCalled();
+	});
 });
 
-describe('testing PostsList', () => {
+describe('Testing PostsList', () => {
 	let mockOnForward = jest.fn();
 	mockOnForward.mockImplementation((row) => {console.log(row);});
 	let mockOnEndReached = jest.fn();
 	mockOnEndReached.mockImplementation(() => {console.log("End reached");});
 	const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-	test('testing rendering when there are no posts yet', () => {
+	test('Rendering case: there are no posts yet', () => {
 		const domTree = renderer.create(
 			<PostsList toList={ds.cloneWithRows([])}
 				onForward={mockOnForward} onEndReached={mockOnEndReached}/>
@@ -249,7 +269,7 @@ describe('testing PostsList', () => {
 		const tree = domTree.toJSON();
 		expect(tree).toMatchSnapshot();
 	});
-	test('testing rendering when there are some posts', () => {
+	test('Rendering case: there are some posts', () => {
 		const domTree = renderer.create(
 			<PostsList toList={ds.cloneWithRows(Object.values(answer2.posts))}
 				onForward={mockOnForward} onEndReached={mockOnEndReached}/>
@@ -262,35 +282,27 @@ describe('testing PostsList', () => {
 	});*/
 });
 
-describe('testing FakeHref', () => {
+describe('Testing FakeHref', () => {
 	let mockOnCannotHandle = jest.fn();
 	mockOnCannotHandle.mockImplementation(() => {console.log("Cannot handle");});
 	let mockOnError = jest.fn();
 	mockOnError.mockImplementation((error) => {console.log(error);});
-	test('testing general rendering', () => {
+	test('General rendering', () => {
 		const domTree = renderer.create(
 			<FakeHref url={answer1.posts[keys[0]].cleanUrl}
 				onCannotHandle={mockOnCannotHandle}
 				errorHandler={mockOnError}/>
 		);
+		console.log(domTree.getInstance().highlight.props);
 		const tree = domTree.toJSON();
 		expect(tree).toMatchSnapshot();
 	});
-	/*test('testing touchability of this component', () => {
-
-	});*/
+	//test('Handler of touch event of this component', () => {
+	//
+	//});
 });
 
 /*
 it('testing main logic on App component', () => {
 
 });*/
-
-it('mock works well', async () => {
-	let defaultLoad = await loadPosts();
-	let withLimit = await loadPosts({limit: 10});
-	let withOffset = await loadPosts({limit: 5, after: keys[9]});
-	expect(JSON.stringify(defaultLoad)).toEqual(JSON.stringify(answer1));
-	expect(JSON.stringify(withLimit)).toEqual(JSON.stringify(answer2));
-	expect(JSON.stringify(withOffset)).toEqual(JSON.stringify(answer3));
-});

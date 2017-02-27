@@ -12,7 +12,7 @@ export default class FakeHref extends Component {
 						else
 							return Linking.openURL(this.props.url);
 					}).catch(this.props.errorHandler);
-				}}>
+				}} ref={(ref) => {this.highlight = ref;}}>
 				<Text style={{color: "blue", textDecorationLine: "underline"}}>
 					{this.props.url}
 				</Text>

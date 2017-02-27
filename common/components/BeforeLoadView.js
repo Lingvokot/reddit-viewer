@@ -16,7 +16,7 @@ export default class BeforeLoadView extends Component {
 							style={{
 								paddingTop: 5, paddingBottom: 5,
 								margin: 5
-							}}/>
+							}} ref={(ref) => {this.retryButton = ref;}}/>
 				</View>
 			);
 		else
