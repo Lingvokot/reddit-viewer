@@ -11,7 +11,9 @@ export default class PostsList extends Component {
 		return (
 			<ListView dataSource={this.props.toList}
 				onEndReached={() => {
-					this.props.onEndReached();
+					return new Promise(resolve => {
+						this.props.onEndReached();
+					}).then(() => resolve());
 				}}
 				renderRow={(rowData) => (
 					<TouchableHighlight style={{

@@ -4,14 +4,23 @@ jest.mock('Linking', () => {
 	let toReturn = {
 		addEventListener: jest.fn(),
 		removeEventListener: jest.fn(),
+		removeAllEventListeners: jest.fn(),
 		openURL: jest.fn(),
 		canOpenURL: jest.fn(),
 		getInitialURL: jest.fn(),
 		configureMock: (newCanHandle, newError) => {
 			mockCanHandle = newCanHandle;
 			mockError = newError;
+		},
+		makeArtificialErrorEvent: (error) => {
+			let mockListenersSnapshot = new Set(mockListeners);
+			for (let func1 of mockListenersSnapshot)
+				func1(error);
 		}
 	};
+	toReturn.removeAllEventListeners.mockImplementation(() => {
+		mockListeners.clear();
+	});
 	toReturn.addEventListener.mockImplementation((type, func) => {
 		return mockListeners.add(func);
 	});
@@ -19,23 +28,16 @@ jest.mock('Linking', () => {
 		return mockListeners.delete(func);
 	});
 	toReturn.openURL.mockImplementation((url) => {
-		if (mockError) {
-			let error = new Error('Unknown error');
-			for (let func1 of mockListeners)
-				func1({url, error});
-			throw error;
-		}
+		if (mockError)
+			throw {url, error: 'Unknown error'};
 		else
 			for (let func1 of mockListeners)
 				func1({url});
 	});
 	toReturn.canOpenURL.mockImplementation(url => {
-		if (mockError)
-			return new Promise((resolve, reject) => reject('Unknown error'));
-		else
-			return new Promise(resolve => resolve(mockCanHandle));
+		return new Promise(resolve => resolve(mockCanHandle));
 	});
-	toReturn.getInitialURL.mockImplementation(() => "");
+	toReturn.getInitialURL.mockImplementation(() => null);
 	return toReturn;
 });
 module.exports = rn;

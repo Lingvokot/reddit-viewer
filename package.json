@@ -21,6 +21,7 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": "./jest-setup.js"
+    "verbose": true,
+    "setupFiles": ["./__mocks__/jest-setup.js", "./__mocks__/jest-setup2.js"]
   }
 }

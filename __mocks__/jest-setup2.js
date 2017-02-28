@@ -1,6 +1,6 @@
-const apiClient = jest.genMockFromModule('@r/api-client');
+const rn = require('@r/api-client');
 
-const data = {
+const mockData = {
 	"posts": {
 		"t3_5vpnjl": {
 			"cleanUrl":"http://www.businessinsider.com.au/elijah-wood-hollywood-pedophile-ring-2016-5?r=US&IR=T",
@@ -602,22 +602,21 @@ const data = {
 		}
 	}
 };
-const keys = Object.keys(data.posts);
-for (let key1 of keys)
-	data.posts[key1].uuid = data.posts[key1].name;
 
-apiClient.collections.PostsFromSubreddit = {
-	fetch: (apiOptions, filter, options) => {
+const keys = Object.keys(mockData.posts);
+for (let key1 of keys)
+	mockData.posts[key1].uuid = mockData.posts[key1].name;
+rn.collections.PostsFromSubreddit.fetch = jest.fn();
+rn.collections.PostsFromSubreddit.fetch.mockImplementation((apiOptions, filter, options) => {
 		return new Promise(resolve => {
 			let startIndex = options.after ? (keys.indexOf(options.after) + 1) : 0;
 			let limit = options.limit || 25;
 			let slice = keys.slice(startIndex, startIndex + limit);
 			let answer = {posts: {}};
 			for (let key1 of slice)
-				answer.posts[key1] = data.posts[key1];
-			resolve(answer);
+				answer.posts[key1] = mockData.posts[key1];
+			resolve({apiResponse: answer});
 		});
-	}
-}
+	});
 
-module.exports = apiClient;
+module.exports = rn;

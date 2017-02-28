@@ -17,30 +17,33 @@ export default class App extends Component {
 			error: null, finished: false
 		};
 	}
-	componentDidMount() {
+	componentWillMount() {
 		if (this.state.postsToList.length == 0)
 			this.loadMorePosts();
 	}
 	loadMorePosts() {
-		this.setState({finished: false}, async () => {
-			let page = null;
-			try {
-				if (this.state.postsToList.length == 0)
-					page = await loadPosts({limit: 10});
-				else {
-					const after = last(this.state.postsToList).uuid;
-					page = await loadPosts({after, limit: 10});
+		return new Promise((resolve) => {
+			this.setState({finished: false}, async () => {
+				let page = null;
+				try {
+					if (this.state.postsToList.length == 0)
+						page = await loadPosts({limit: 10});
+					else {
+						const after = last(this.state.postsToList).uuid;
+						page = await loadPosts({after, limit: 10});
+					}
 				}
-			}
-			catch (e) {
-				this.setState({error: e.message, finished: true});
-				return;
-			}
-			let newPosts = Object.values(page.apiResponse.posts);
-			this.setState({
-				error: null, finished: true,
-				postsToList: this.state.postsToList.concat(newPosts),
-				pagesFetched: this.state.pagesFetched + 1
+				catch (e) {
+					this.setState({error: e.message, finished: true});
+					resolve();
+					return;
+				}
+				let newPosts = Object.values(page.apiResponse.posts);
+				this.setState({
+					error: null, finished: true,
+					postsToList: this.state.postsToList.concat(newPosts),
+					pagesFetched: this.state.pagesFetched + 1
+				}, () => resolve());
 			});
 		});
 	}
