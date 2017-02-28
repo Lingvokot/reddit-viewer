@@ -14,7 +14,7 @@ export default class App extends Component {
 		super(props);
 		this.state = {
 			selectedPost: null, postsToList: [], pagesFetched: 0,
-			error: null, finished: false
+			error: null, finished: false, inProcess: false
 		};
 	}
 	componentWillMount() {
@@ -22,8 +22,12 @@ export default class App extends Component {
 			this.loadMorePosts();
 	}
 	loadMorePosts() {
+		if (this.state.inProcess) {
+			console.log(`Query with after ${last(this.state.postsToList).uuid} locked`);
+			return;
+		}
 		return new Promise((resolve) => {
-			this.setState({finished: false}, async () => {
+			this.setState({finished: false, inProcess: true}, async () => {
 				let page = null;
 				try {
 					if (this.state.postsToList.length == 0)
@@ -40,7 +44,7 @@ export default class App extends Component {
 				}
 				let newPosts = Object.values(page.apiResponse.posts);
 				this.setState({
-					error: null, finished: true,
+					error: null, finished: true, inProcess: false,
 					postsToList: this.state.postsToList.concat(newPosts),
 					pagesFetched: this.state.pagesFetched + 1
 				}, () => resolve());
