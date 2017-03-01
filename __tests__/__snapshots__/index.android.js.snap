@@ -645,6 +645,2054 @@ exports[`Testing PostsList Rendering case: there are some posts 1`] = `
 </View>
 `;
 
+exports[`Testing main logic on App component Checking whether "Back" button works correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }>
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+        "overflow": "hidden",
+      }
+    }>
+    <View
+      onStartShouldSetResponderCapture={[Function]}
+      pointerEvents="auto"
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+              Object {
+                "scaleX": 1,
+              },
+              Object {
+                "scaleY": 1,
+              },
+              Object {
+                "rotate": "0deg",
+              },
+              Object {
+                "skewX": "0deg",
+              },
+              Object {
+                "skewY": "0deg",
+              },
+            ],
+          },
+          null,
+        ]
+      }>
+      <View>
+        <RCTScrollView>
+          <View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Elijah Wood says there\'s a secret paedophile ring in Hollywood and child actors are \'prey\'
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Alien visits /pol/
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                3,000 Scientists Have Asked for Help Running for Office to Oppose Trump
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                7-year-old to senator: Don\'t take away PBS to build the wall.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                TIL Tom Hanks is a big fan of community colleges. Since he had poor grades in high school and lousy SAT scores Hanks ended up at Chabot, a nearby community college, because it accepted everyone and was free.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Just a guy taking down the Confederate Flag on live TV
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                As a child I pretended to like carrots for my parents. As an adult I pretend to like them for my child. I fucking hate carrots.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Runaway truck
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                North Korea demands Malaysia stop investigating Kim Jong-nam death
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                $0.25 out of a machine. $947.36 out of a dog. Gotta love that smug \"worth it\" look.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Today\'s Google Doodle is pretty amazing [GIF]
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Shooting at a snake, WCGW?
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Hey Jeff, as a Lucio main, I think it\'s imperative to get Hippity Hoppity Get off My Property as a voice line.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Love, Morriage, Boby?
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Render Farm, Simon Stålenhag, Digital, 2017 (1920x1920)
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                My great grandfather, posing with his bicycle in 1894
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                I volunteer at the humane society and this girl shook my hand when I first met her! Dogs are the best
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Alien: Covenant | “Prologue: Last Supper\" [HD] | 20th Century FOX
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Admit it, you\'ll do the same thing when you get yours
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                The North Star isn\'t special because it\'s bright. It\'s unique because it appears to stand still!
+              </Text>
+            </View>
+          </View>
+        </RCTScrollView>
+      </View>
+    </View>
+    <View
+      onStartShouldSetResponderCapture={[Function]}
+      pointerEvents="none"
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+              Object {
+                "scaleX": 1,
+              },
+              Object {
+                "scaleY": 1,
+              },
+              Object {
+                "rotate": "0deg",
+              },
+              Object {
+                "skewX": "0deg",
+              },
+              Object {
+                "skewY": "0deg",
+              },
+            ],
+          },
+          Object {
+            "bottom": -1334,
+            "top": 1334,
+          },
+        ]
+      }>
+      <View>
+        <View
+          accessibilityComponentType="button"
+          accessibilityLabel={undefined}
+          accessibilityTraits={
+            Array [
+              "button",
+            ]
+          }
+          accessible={true}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}>
+          <View
+            style={
+              Array [
+                Object {},
+              ]
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#0C42FD",
+                    "fontSize": 18,
+                    "padding": 8,
+                    "textAlign": "center",
+                  },
+                ]
+              }>
+              Back
+            </Text>
+          </View>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontWeight": "bold",
+              "textAlign": "center",
+            }
+          }>
+          Elijah Wood says there\'s a secret paedophile ring in Hollywood and child actors are \'prey\'
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail">
+          ID: t3_5vpnjl
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail">
+          Author: yeoldgolddigger
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail">
+          Score: 4329
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail">
+          External URL:
+        </Text>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              undefined,
+            ]
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "blue",
+                "textDecorationLine": "underline",
+              }
+            }>
+            http://www.businessinsider.com.au/elijah-wood-hollywood-pedophile-ring-2016-5?r=US&IR=T
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Testing main logic on App component Checking whether displaying of details is correct 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }>
+  <View
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    onTouchStart={[Function]}
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "flex": 1,
+        "overflow": "hidden",
+      }
+    }>
+    <View
+      onStartShouldSetResponderCapture={[Function]}
+      pointerEvents="auto"
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+              Object {
+                "scaleX": 1,
+              },
+              Object {
+                "scaleY": 1,
+              },
+              Object {
+                "rotate": "0deg",
+              },
+              Object {
+                "skewX": "0deg",
+              },
+              Object {
+                "skewY": "0deg",
+              },
+            ],
+          },
+          null,
+        ]
+      }>
+      <View>
+        <RCTScrollView>
+          <View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Elijah Wood says there\'s a secret paedophile ring in Hollywood and child actors are \'prey\'
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Alien visits /pol/
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                3,000 Scientists Have Asked for Help Running for Office to Oppose Trump
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                7-year-old to senator: Don\'t take away PBS to build the wall.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                TIL Tom Hanks is a big fan of community colleges. Since he had poor grades in high school and lousy SAT scores Hanks ended up at Chabot, a nearby community college, because it accepted everyone and was free.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Just a guy taking down the Confederate Flag on live TV
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                As a child I pretended to like carrots for my parents. As an adult I pretend to like them for my child. I fucking hate carrots.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Runaway truck
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                North Korea demands Malaysia stop investigating Kim Jong-nam death
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                $0.25 out of a machine. $947.36 out of a dog. Gotta love that smug \"worth it\" look.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Today\'s Google Doodle is pretty amazing [GIF]
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Shooting at a snake, WCGW?
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Hey Jeff, as a Lucio main, I think it\'s imperative to get Hippity Hoppity Get off My Property as a voice line.
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Love, Morriage, Boby?
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Render Farm, Simon Stålenhag, Digital, 2017 (1920x1920)
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                My great grandfather, posing with his bicycle in 1894
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                I volunteer at the humane society and this girl shook my hand when I first met her! Dogs are the best
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Alien: Covenant | “Prologue: Last Supper\" [HD] | 20th Century FOX
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                Admit it, you\'ll do the same thing when you get yours
+              </Text>
+            </View>
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 3,
+                    "borderWidth": 1,
+                    "margin": 5,
+                    "padding": 5,
+                  },
+                ]
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail">
+                The North Star isn\'t special because it\'s bright. It\'s unique because it appears to stand still!
+              </Text>
+            </View>
+          </View>
+        </RCTScrollView>
+      </View>
+    </View>
+    <View
+      onStartShouldSetResponderCapture={[Function]}
+      pointerEvents="none"
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+              Object {
+                "translateY": 0,
+              },
+              Object {
+                "scaleX": 1,
+              },
+              Object {
+                "scaleY": 1,
+              },
+              Object {
+                "rotate": "0deg",
+              },
+              Object {
+                "skewX": "0deg",
+              },
+              Object {
+                "skewY": "0deg",
+              },
+            ],
+          },
+          Object {
+            "bottom": -1334,
+            "top": 1334,
+          },
+        ]
+      }>
+      <View>
+        <View
+          accessibilityComponentType="button"
+          accessibilityLabel={undefined}
+          accessibilityTraits={
+            Array [
+              "button",
+            ]
+          }
+          accessible={true}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}>
+          <View
+            style={
+              Array [
+                Object {},
+              ]
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#0C42FD",
+                    "fontSize": 18,
+                    "padding": 8,
+                    "textAlign": "center",
+                  },
+                ]
+              }>
+              Back
+            </Text>
+          </View>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontWeight": "bold",
+              "textAlign": "center",
+            }
+          }>
+          Elijah Wood says there\'s a secret paedophile ring in Hollywood and child actors are \'prey\'
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail">
+          ID: t3_5vpnjl
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail">
+          Author: yeoldgolddigger
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail">
+          Score: 4329
+        </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail">
+          External URL:
+        </Text>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              undefined,
+            ]
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "blue",
+                "textDecorationLine": "underline",
+              }
+            }>
+            http://www.businessinsider.com.au/elijah-wood-hollywood-pedophile-ring-2016-5?r=US&IR=T
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
 exports[`Testing main logic on App component Loading list of posts with loadMorePosts 1`] = `
 <View
   style={

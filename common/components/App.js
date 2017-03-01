@@ -22,10 +22,8 @@ export default class App extends Component {
 			this.loadMorePosts();
 	}
 	loadMorePosts() {
-		if (this.state.inProcess) {
-			console.log(`Query with after ${last(this.state.postsToList).uuid} locked`);
+		if (this.state.inProcess)
 			return;
-		}
 		return new Promise((resolve) => {
 			this.setState({finished: false, inProcess: true}, async () => {
 				let page = null;
@@ -38,8 +36,7 @@ export default class App extends Component {
 					}
 				}
 				catch (e) {
-					this.setState({error: e.message, finished: true});
-					resolve();
+					this.setState({error: e.message, finished: true, inProcess: false}, () => resolve());
 					return;
 				}
 				let newPosts = Object.values(page.apiResponse.posts);
@@ -66,8 +63,11 @@ export default class App extends Component {
 					return (
 						<PostsList toList={ds.cloneWithRows(this.state.postsToList)}
 							onForward={(selectedPost) => {
-								navigator.push({title: selectedPost.title, index: route.index + 1});
-								this.setState({selectedPost});
+								return new Promise(resolve => {
+									this.setState({selectedPost});
+									resolve();
+									navigator.push({title: selectedPost.title, index: route.index + 1});
+								}).catch(err => {});
 							}}
 							onEndReached={() => this.loadMorePosts()}
 							ref={(ref) => {this.postsList = ref;}}/>
@@ -76,9 +76,12 @@ export default class App extends Component {
 					return (
 						<PostView selectedPost={this.state.selectedPost}
 							onBack={() => {
-								navigator.pop();
-								this.setState({selectedPost: null});
-							}}/>
+								return new Promise(resolve => {
+									this.setState({selectedPost: null});
+									resolve();
+									navigator.pop();
+								}).catch(err => {});
+							}} ref={(ref) => {this.postView = ref;}}/>
 					)
 			}} />
 		);

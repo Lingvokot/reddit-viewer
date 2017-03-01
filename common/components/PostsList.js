@@ -22,8 +22,11 @@ export default class PostsList extends Component {
 							borderColor: "red",
 							margin: 5,
 							padding: 5
-						}} ref={(ref) => {this.listElements.push(ref);}}
-						onPress={() => {this.props.onForward(rowData);}}>
+						}} ref={(ref) => {
+							if (ref)
+								this.listElements.push(ref);
+						}}
+						onPress={() => this.props.onForward(rowData)}>
 						<Text>{rowData.title}</Text>
 					</TouchableHighlight>
 				)} ref={(ref) => {this.listView = ref;}}/>

@@ -8,9 +8,6 @@ import PostView from '../common/components/PostView';
 import PostsList from '../common/components/PostsList';
 import FakeHref from '../common/components/FakeHref';
 const {configureMock, makeArtificialErrorEvent} = Linking;
-/*import APIOptions from '@r/api-client';
-import { collections } from '@r/api-client';
-const { PostsFromSubreddit } = collections;*/
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
@@ -195,15 +192,6 @@ it('Testing first rendering', () => {
 	const tree = domTree.toJSON();
 	expect(tree).toMatchSnapshot();
 });
-
-/*it('Testing work of mock', async () => {
-	let defaultLoad = await loadPosts();
-	let withLimit = await loadPosts({limit: 10});
-	let withOffset = await loadPosts({limit: 5, after: keys[9]});
-	expect(JSON.stringify(defaultLoad)).toEqual(JSON.stringify(answer1));
-	expect(JSON.stringify(withLimit)).toEqual(JSON.stringify(answer2));
-	expect(JSON.stringify(withOffset)).toEqual(JSON.stringify(answer3));
-});*/
 
 describe('Testing BeforeLoadView', () => {
 	const dummyMockFunc = jest.fn();
@@ -393,20 +381,24 @@ describe('Testing FakeHref', () => {
 });
 
 describe('Testing main logic on App component', () => {
+	let instance = null;
+	//here and below are extreme kludges used to start the process of mocked fetching
+	const loadFirstPosts = (callback) => {
+		instance.setState({inProcess: false}, () => {
+			instance.loadMorePosts().then(() => {
+				instance.setState({pagesFetched: 1, postsToList: instance.state.postsToList.slice(0, 10)}, callback);
+			});
+		});
+	};
 	test('Loading list of posts with loadMorePosts', (done) => {
 		const domTree = renderer.create(
 			<App/>
 		);
-		const instance = domTree.getInstance();
-		instance.loadMorePosts().then(() => {
-			//now it appears that we have two identical pages not because fetching is executed twice in loadMorePosts()
-			//here is a kludge, however
-			//the sanity of loadMorePosts() will be tested below
-			instance.setState({pagesFetched: 1, postsToList: instance.state.postsToList.slice(0, 10)}, () => {
-				instance.loadMorePosts().then(() => {
-					expect(domTree.toJSON()).toMatchSnapshot();
-					done();
-				});
+		instance = domTree.getInstance();
+		loadFirstPosts(() => {
+			instance.loadMorePosts().then(() => {
+				expect(domTree.toJSON()).toMatchSnapshot();
+				done();
 			});
 		});
 	});
@@ -414,36 +406,45 @@ describe('Testing main logic on App component', () => {
 		const domTree = renderer.create(
 			<App/>
 		);
-		const instance = domTree.getInstance();
-		instance.loadMorePosts().then(() => {
-			instance.setState({pagesFetched: 1, postsToList: instance.state.postsToList.slice(0, 10)}, () => {
-				instance.loadMorePosts().then(() => {
+		instance = domTree.getInstance();
+		loadFirstPosts(() => {
+			instance.postsList.props.onEndReached().then(() => {
+				expect(domTree.toJSON()).toMatchSnapshot();
+				done();
+			});
+		});
+	});
+	test('Checking whether displaying of details is correct', (done) => {
+		const domTree = renderer.create(
+			<App/>
+		);
+		instance = domTree.getInstance();
+		loadFirstPosts(() => {
+			instance.postsList.props.onEndReached().then(() => {
+				let toPress = instance.postsList.listElements[0];
+				toPress.props.onPress().then(() => {
 					expect(domTree.toJSON()).toMatchSnapshot();
 					done();
 				});
 			});
 		});
 	});
-});
-
-/*it('testing main logic on App component', (done) => {
-	const domTree = renderer.create(
-		<App/>
-	);
-	const instance = domTree.getInstance();
-	instance.loadMorePosts().then(() => {
-		//now it appears that we have two identical pages not because fetching is executed twice in loadMorePosts()
-		//here is a kludge, however
-		//the sanity of loadMorePosts() will be tested below
-		instance.setState({pagesFetched: 1, postsToList: instance.state.postsToList.slice(0, 10)}, () => {
-			instance.loadMorePosts().then(() => {
-				let weGotToStr = JSON.stringify(instance.state.postsToList);
-				let expectedToStr = JSON.stringify(Object.values(answer1.posts).slice(0, 20));
-				console.log(weGotToStr);
-				console.log(expectedToStr);
-				expect(weGotToStr).toEqual(expectedToStr);
-				done();
-			})
+	test('Checking whether "Back" button works correctly', (done) => {
+		const domTree = renderer.create(
+			<App/>
+		);
+		instance = domTree.getInstance();
+		loadFirstPosts(() => {
+			instance.postsList.props.onEndReached().then(() => {
+				let toPress = instance.postsList.listElements[0];
+				toPress.props.onPress().then(() => {
+					let toPress = instance.postView.backButton;
+					toPress.props.onPress().then(() => {
+						expect(domTree.toJSON()).toMatchSnapshot();
+						done();
+					});
+				});
+			});
 		});
 	});
-});*/
+});
