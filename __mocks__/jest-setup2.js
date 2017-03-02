@@ -1,4 +1,5 @@
-const rn = require('@r/api-client');
+/*global jest, require, module*/
+const rn = require("@r/api-client");
 
 const mockData = {
 	"posts": {
@@ -608,15 +609,15 @@ for (let key1 of keys)
 	mockData.posts[key1].uuid = mockData.posts[key1].name;
 rn.collections.PostsFromSubreddit.fetch = jest.fn();
 rn.collections.PostsFromSubreddit.fetch.mockImplementation((apiOptions, filter, options) => {
-		return new Promise(resolve => {
-			let startIndex = options.after ? (keys.indexOf(options.after) + 1) : 0;
-			let limit = options.limit || 25;
-			let slice = keys.slice(startIndex, startIndex + limit);
-			let answer = {posts: {}};
-			for (let key1 of slice)
-				answer.posts[key1] = mockData.posts[key1];
-			resolve({apiResponse: answer});
-		});
+	return new Promise(resolve => {
+		let startIndex = options.after ? (keys.indexOf(options.after) + 1) : 0;
+		let limit = options.limit || 25;
+		let slice = keys.slice(startIndex, startIndex + limit);
+		let answer = {posts: {}};
+		for (let key1 of slice)
+			answer.posts[key1] = mockData.posts[key1];
+		resolve({apiResponse: answer});
 	});
+});
 
 module.exports = rn;

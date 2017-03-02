@@ -16,12 +16,21 @@
     "babel-jest": "^18.0.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-react-native": "1.9.1",
+    "eslint": "^3.16.1",
+    "eslint-config-standard": "^7.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "eslint-plugin-async-await": "0.0.0",
     "jest": "18.1.0",
     "react-test-renderer": "15.4.2"
   },
   "jest": {
     "preset": "react-native",
     "verbose": true,
-    "setupFiles": ["./__mocks__/jest-setup.js", "./__mocks__/jest-setup2.js"]
+    "setupFiles": [
+      "./__mocks__/jest-setup.js",
+      "./__mocks__/jest-setup2.js"
+    ]
   }
 }

@@ -1,0 +1,1 @@
+./node_modules/.bin/eslint  ./__tests__ ./__mocks__ ./common ./index.android.js ./index.ios.js

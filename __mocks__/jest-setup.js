@@ -1,6 +1,8 @@
-const rn = require('react-native')
+/*global jest, require, module, console*/
+/*eslint no-console: "off"*/
+const rn = require("react-native");
 var mockListeners = new Set(), mockCanHandle = true, mockError = false;
-jest.mock('Linking', () => {
+jest.mock("Linking", () => {
 	let toReturn = {
 		addEventListener: jest.fn(),
 		removeEventListener: jest.fn(),
@@ -29,12 +31,13 @@ jest.mock('Linking', () => {
 	});
 	toReturn.openURL.mockImplementation((url) => {
 		if (mockError)
-			throw {url, error: 'Unknown error'};
+			throw {url, error: "Unknown error"};
 		else
 			for (let func1 of mockListeners)
 				func1({url});
 	});
 	toReturn.canOpenURL.mockImplementation(url => {
+		console.log(`Mocking opening URL ${url}`);
 		return new Promise(resolve => resolve(mockCanHandle));
 	});
 	toReturn.getInitialURL.mockImplementation(() => null);

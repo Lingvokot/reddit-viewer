@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
-import { View, Text, Button, Modal } from 'react-native';
-import FakeHref from './FakeHref';
+/*global alert*/
+import React, { Component, PropTypes } from "react";
+import { View, Text, Button, Modal } from "react-native";
+import FakeHref from "./FakeHref";
 
 export default class PostView extends Component {
 	constructor(props) {
@@ -14,9 +15,9 @@ export default class PostView extends Component {
 				<Button onPress={this.props.onBack}
 						title="Back"
 						style={{
-                            paddingTop: 5, paddingBottom: 5,
-                            backgroundColor: "blue"
-                        }} ref={(ref) => {this.backButton = ref;}}/>
+							paddingTop: 5, paddingBottom: 5,
+							backgroundColor: "blue"
+						}} ref={(ref) => {this.backButton = ref;}}/>
 				<Text style={{fontWeight: "bold", textAlign: "center"}}>
 					{selectedPost.title}
 				</Text>
@@ -32,6 +33,6 @@ export default class PostView extends Component {
 						alert(err.message);
 					}} ref={(ref) => {this.externalLink = ref;}}/>
 			</View>
-		)
+		);
 	}
 }
