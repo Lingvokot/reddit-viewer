@@ -43,4 +43,7 @@ jest.mock("Linking", () => {
 	toReturn.getInitialURL.mockImplementation(() => null);
 	return toReturn;
 });
+
+jest.mock("Alert", () => {return {alert: jest.fn()};});
+
 module.exports = rn;

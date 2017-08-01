@@ -6,7 +6,7 @@ export default class FakeHref extends Component {
 		return (
 			<TouchableHighlight
 				onPress={() => {
-					Linking.canOpenURL(this.props.url).then(supported => {
+					return Linking.canOpenURL(this.props.url).then(supported => {
 						if (!supported)
 							this.props.onCannotHandle();
 						else

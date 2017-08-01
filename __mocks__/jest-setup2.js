@@ -607,8 +607,8 @@ const mockData = {
 const keys = Object.keys(mockData.posts);
 for (let key1 of keys)
 	mockData.posts[key1].uuid = mockData.posts[key1].name;
-rn.collections.PostsFromSubreddit.fetch = jest.fn();
-rn.collections.PostsFromSubreddit.fetch.mockImplementation((apiOptions, filter, options) => {
+	rn.collections.PostsFromSubreddit.fetch = jest.fn();
+	rn.collections.PostsFromSubreddit.fetch.mockImplementation((apiOptions, filter, options) => {
 	return new Promise(resolve => {
 		let startIndex = options.after ? (keys.indexOf(options.after) + 1) : 0;
 		let limit = options.limit || 25;

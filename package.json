@@ -4,33 +4,43 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest --coverage --verbose"
   },
   "dependencies": {
     "@r/api-client": "^3.36.0",
+    "babel-jest": "^20.0.3",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-react-native": "^2.1.0",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-async-await": "0.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^20.0.4",
     "react": "15.4.2",
     "react-native": "0.41.2",
+    "react-test-renderer": "^15.6.1",
     "superagent": "^3.4.4"
   },
-  "devDependencies": {
-    "babel-jest": "^18.0.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-react-native": "1.9.1",
-    "eslint": "^3.16.1",
-    "eslint-config-standard": "^7.0.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-react": "^6.10.0",
-    "eslint-plugin-standard": "^2.0.1",
-    "eslint-plugin-async-await": "0.0.0",
-    "jest": "18.1.0",
-    "react-test-renderer": "15.4.2"
-  },
+  "devDependencies": {},
   "jest": {
     "preset": "react-native",
     "verbose": true,
     "setupFiles": [
       "./__mocks__/jest-setup.js",
       "./__mocks__/jest-setup2.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90
+      }
+    },
+    "collectCoverageFrom": [
+      "common/components/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "node_modules/"
     ]
   }
 }

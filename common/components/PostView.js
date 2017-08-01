@@ -1,6 +1,5 @@
-/*global alert*/
 import React, { Component, PropTypes } from "react";
-import { View, Text, Button, Modal } from "react-native";
+import { View, Text, Button, Modal, Alert } from "react-native";
 import FakeHref from "./FakeHref";
 
 export default class PostView extends Component {
@@ -27,10 +26,10 @@ export default class PostView extends Component {
 				<Text>External URL:</Text>
 				<FakeHref url={selectedPost.cleanUrl}
 					onCannotHandle={() => {
-						alert("Cannot handle this URL");
+						Alert.alert("Cannot handle this URL");
 					}}
 					errorHandler={(err) => {
-						alert(err.message);
+						Alert.alert(err.message);
 					}} ref={(ref) => {this.externalLink = ref;}}/>
 			</View>
 		);
