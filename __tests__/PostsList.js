@@ -83,54 +83,54 @@ const answer2 = {
 };
 
 describe("Testing PostsList", () => {
-  let returnedValue = null;
+	let returnedValue = null;
 	const content = Object.values(answer2.posts);
-  const mockOnForward = jest.fn();
+	const mockOnForward = jest.fn();
 	mockOnForward.mockImplementation((row) => {returnedValue = row;});
-  const mockOnEndReached = jest.fn();
+	const mockOnEndReached = jest.fn();
 	mockOnEndReached.mockImplementation(() => {});
-  const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+	const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
-  test("Rendering case: there are no posts yet", () => {
+	test("Rendering case: there are no posts yet", () => {
 		const domTree = renderer.create(
-  		<PostsList toList={ds.cloneWithRows([])} onForward={mockOnForward}
-        onEndReached={mockOnEndReached}/>
-  	);
-  	const tree = domTree.toJSON();
-  	expect(tree).toMatchSnapshot();
-	});
-  test("Rendering case: there are some posts", () => {
-  	const domTree = renderer.create(
-  		<PostsList toList={ds.cloneWithRows(content)}
-				onForward={mockOnForward} onEndReached={mockOnEndReached}/>
-  	);
-  	const tree = domTree.toJSON();
+		<PostsList toList={ds.cloneWithRows([])} onForward={mockOnForward}
+				onEndReached={mockOnEndReached}/>
+		);
+		const tree = domTree.toJSON();
 		expect(tree).toMatchSnapshot();
-  });
-	test("Checking reaction on onEndReached event", () => {
-  	const domTree = renderer.create(
-  		<PostsList toList={ds.cloneWithRows(content)} onForward={mockOnForward}
-        onEndReached={mockOnEndReached}/>
-  	);
-  	const listView = domTree.getInstance().listView;
-  	expect(typeof listView.props.onEndReached).toEqual("function");
-		listView.props.onEndReached();
-  	expect(mockOnEndReached).toBeCalled();
-  });
-	test("Checking touchability of post headers", () => {
-  	const domTree = renderer.create(
-  		<PostsList toList={ds.cloneWithRows(content)}
+	});
+	test("Rendering case: there are some posts", () => {
+		const domTree = renderer.create(
+			<PostsList toList={ds.cloneWithRows(content)}
 				onForward={mockOnForward} onEndReached={mockOnEndReached}/>
-  	);
-  	const listElements = domTree.getInstance().listElements;
+		);
+		const tree = domTree.toJSON();
+		expect(tree).toMatchSnapshot();
+	});
+	test("Checking reaction on onEndReached event", () => {
+		const domTree = renderer.create(
+			<PostsList toList={ds.cloneWithRows(content)} onForward={mockOnForward}
+				onEndReached={mockOnEndReached}/>
+		);
+		const listView = domTree.getInstance().listView;
+		expect(typeof listView.props.onEndReached).toEqual("function");
+		listView.props.onEndReached();
+		expect(mockOnEndReached).toBeCalled();
+	});
+	test("Checking touchability of post headers", () => {
+		const domTree = renderer.create(
+			<PostsList toList={ds.cloneWithRows(content)}
+				onForward={mockOnForward} onEndReached={mockOnEndReached}/>
+		);
+		const listElements = domTree.getInstance().listElements;
 		const expectedLength = Object.keys(answer2.posts).length;
-  	expect(listElements.length).toEqual(expectedLength);
-  	for (let i = 0; i < expectedLength; i++) {
+		expect(listElements.length).toEqual(expectedLength);
+		for (let i = 0; i < expectedLength; i++) {
 			const element1 = listElements[i];
-  		expect(typeof element1.props.onPress).toEqual("function");
-  		element1.props.onPress();
-  		expect(mockOnForward.mock.calls.length).toEqual(i + 1);
+			expect(typeof element1.props.onPress).toEqual("function");
+			element1.props.onPress();
+			expect(mockOnForward.mock.calls.length).toEqual(i + 1);
 			expect(JSON.stringify(returnedValue)).toEqual(JSON.stringify(content[i]));
-  	}
-  });
+		}
+	});
 });

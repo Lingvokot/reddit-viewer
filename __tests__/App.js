@@ -5,10 +5,6 @@ import {ListView, Linking} from "react-native";
 import React from "react";
 import Index from "../index.android.js";
 import App from "../common/components/App";
-import BeforeLoadView from "../common/components/BeforeLoadView";
-import PostView from "../common/components/PostView";
-import PostsList from "../common/components/PostsList";
-import FakeHref from "../common/components/FakeHref";
 const {configureMock, makeArtificialErrorEvent} = Linking;
 
 // Note: test renderer must be required after react-native.

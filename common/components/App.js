@@ -25,27 +25,23 @@ export default class App extends Component {
 		if (this.state.inProcess)
 			return;
 		return new Promise((resolve) => {
-			this.setState({finished: false, inProcess: true}, async () => {
-				let page = null;
-				try {
-					if (this.state.postsToList.length == 0)
-						page = await loadPosts({limit: 10});
-					else {
-						const after = last(this.state.postsToList).uuid;
-						page = await loadPosts({after, limit: 10});
-					}
-				}
-				catch (e) {
-					this.setState({error: e.message, finished: true, inProcess: false}, () => resolve());
-					return;
-				}
-				let newPosts = Object.values(page.apiResponse.posts);
-				this.setState({
-					error: null, finished: true, inProcess: false,
-					postsToList: this.state.postsToList.concat(newPosts),
-					pagesFetched: this.state.pagesFetched + 1
-				}, () => resolve());
+			this.setState({finished: false, inProcess: true}, resolve);
+		}).then(() => {
+			if (this.state.postsToList.length == 0)
+				return loadPosts({limit: 10});
+			else {
+				const after = last(this.state.postsToList).uuid;
+				return loadPosts({after, limit: 10});
+			}
+		}).then(page => {
+			let newPosts = Object.values(page.apiResponse.posts);
+			this.setState({
+				error: null, finished: true, inProcess: false,
+				postsToList: this.state.postsToList.concat(newPosts),
+				pagesFetched: this.state.pagesFetched + 1
 			});
+		}).catch(e => {
+			this.setState({error: e.message, finished: true, inProcess: false}, () => resolve());
 		});
 	}
 	render() {

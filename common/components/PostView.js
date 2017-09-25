@@ -12,11 +12,11 @@ export default class PostView extends Component {
 		return (
 			<View>
 				<Button onPress={this.props.onBack}
-						title="Back"
-						style={{
-							paddingTop: 5, paddingBottom: 5,
-							backgroundColor: "blue"
-						}} ref={(ref) => {this.backButton = ref;}}/>
+					title="Back"
+					style={{
+						paddingTop: 5, paddingBottom: 5,
+						backgroundColor: "blue"
+					}} ref={(ref) => {this.backButton = ref;}}/>
 				<Text style={{fontWeight: "bold", textAlign: "center"}}>
 					{selectedPost.title}
 				</Text>
